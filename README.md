@@ -11,6 +11,8 @@ Experimental Verification of the Strong Law of Large Numbers (SLLN) This project
 - Yaren Görgülü – Student ID: 2211021064  
 - Fatmanur Demirci – Student ID: 2211021041
 - Beyzanur Çiftçi- Student ID: 2211021008
+- Buse Yakutsoy - Student ID:
+2311021070
 <!-- Add other team members here -->
 
 ---
