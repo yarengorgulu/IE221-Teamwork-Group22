@@ -28,3 +28,24 @@ def simulate_clt(n_values=[2, 5, 10, 30, 50], m=1000):
 
 if __name__ == "__main__":
     simulate_clt()
+
+
+
+^#qqplots
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import numpy as np
+
+data = np.random.normal(0, 1, 1000) 
+
+plt.figure(figsize=(8, 6))
+stats.probplot(data, dist="norm", plot=plt)
+
+plt.title('Normal Q-Q Plot (n=50)')
+plt.xlabel('Theoretical Quantiles')
+plt.ylabel('Ordered Values')
+plt.grid(True)
+
+
+plt.savefig('results/figures/clt_qqplots.png')
+plt.show()
