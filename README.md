@@ -38,9 +38,9 @@ IE221-Teamwork-Group22/
 ├── results/
 │   └── figures/
 │       └__ slln_running_mean.png   # SLLN running mean convergence plot
-__ clt_histograms.png      # CLT histograms
-__ clt_qqplot.png          # CLT Q-Q plot
-__ pi_estimation.png       # Monte Carlo π estimation
+         __ clt_histograms.png      # CLT histograms
+         __ clt_qqplot.png          # CLT Q-Q plot
+         __ pi_estimation.png       # Monte Carlo π estimation
 
 │
 ├── README.md                     # Project documentation
