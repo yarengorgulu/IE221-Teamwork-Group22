@@ -3,7 +3,9 @@
 **Repository Setup and Simulation Code**
 
 ## Project Title and Description
-Experimental Verification of the Strong Law of Large Numbers (SLLN) This project uses Monte Carlo simulations to demonstrate the SLLN. By generating random samples from a uniform distribution, we visualize how the sample mean ($\bar{X}_n$) almost surely converges to the theoretical expected value ($\mu$) as the number of trials ($n$) approaches infinity.
+Experimental Verification of the Strong Law of Large Numbers (SLLN) This project uses Monte Carlo simulations to demonstrate the SLLN. By generating random samples from a uniform distribution, we visualize how the sample mean ($\bar{X}_n$) almost surely converges to the theoretical expected value ($\mu$) as the number of trials ($n$) approaches infinity.In addition to SLLN, the project also includes simulations for the Central Limit Theorem (CLT)
+and Monte Carlo estimation of π. All simulation outputs are saved under the results/figures directory.
+
 
 ---
 
@@ -22,9 +24,10 @@ To run the simulations, Python 3 and the required libraries must be installed.
 Install dependencies using:
 ```bash
 
-pip install -r requirements.txt
 python src/slln_simulation.py
-results/figures/slln_convergence.png
+python src/clt_simulation.py
+python src/monte_carlo_pi.py
+
 
 -Project Structure
 IE221-Teamwork-Group22/
@@ -34,7 +37,11 @@ IE221-Teamwork-Group22/
 │
 ├── results/
 │   └── figures/
-│       └── slln_convergence.png  # Generated SLLN convergence plot
+│       └__ slln_running_mean.png   # SLLN running mean convergence plot
+__ clt_histograms.png      # CLT histograms
+__ clt_qqplot.png          # CLT Q-Q plot
+__ pi_estimation.png       # Monte Carlo π estimation
+
 │
 ├── README.md                     # Project documentation
 ├── requirements.txt              # Python dependencies
