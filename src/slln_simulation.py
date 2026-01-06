@@ -1,51 +1,45 @@
 """
-This module demonstrates the Strong Law of Large Numbers (SLLN)
-using a Monte Carlo simulation to estimate the value of π.
+This module demonstrates the Strong Law of Large Numbers (SLLN).
 
-As the number of random samples increases, the estimator converges
-almost surely to the true value of π, illustrating the SLLN in practice.
+We generate i.i.d. samples from Uniform(0,1) and compute the running (cumulative) mean.
+By the SLLN, the running mean converges almost surely to the true mean mu = 0.5.
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-def estimate_pi(n=10000):
-        """
-    Estimates the value of π using the Monte Carlo method.
 
-    Random points are generated uniformly in the unit square [0,1] × [0,1].
-    The proportion of points that fall inside the quarter circle
-    (x² + y² ≤ 1) is used to estimate π.
+def simulate_slln(n=10000):
+    """
+    Simulates the SLLN using i.i.d. Uniform(0,1) samples.
 
     Parameters:
-        n (int): Number of random points generated.
+        n (int): Number of samples.
 
     Returns:
-        None. The function generates a convergence plot and saves it as an image.
+        np.ndarray: Running mean values of length n.
     """
-# Generate n random points uniformly in the unit square
-    x = np.random.uniform(0, 1, n)
-    y = np.random.uniform(0, 1, n)
-    
-    # x^2 + y^2 <= 1 koşulu (çeyrek daire içi)
-# Check whether points fall inside the quarter circle
-    inside_circle = (x**2 + y**2) <= 1
-    
-    # Pi tahmini: 4 * (içeridekiler / toplam)
-# Running Monte Carlo estimate of π using cumulative averages
-    pi_estimates = 4 * np.cumsum(inside_circle) / np.arange(1, n + 1)
-    
-    # Görselleştirme
+    mu = 0.5  # True mean of U(0,1)
+
+    samples = np.random.uniform(0, 1, n)
+    running_mean = np.cumsum(samples) / np.arange(1, n + 1)
+
     plt.figure(figsize=(10, 6))
-    plt.plot(pi_estimates, label='Pi Tahmini')
-    plt.axhline(y=np.pi, color='r', linestyle='--', label='Gerçek Pi Değeri')
-    plt.xlabel('Nokta Sayısı (n)')
-    plt.ylabel('Tahmin Edilen Değer')
-    plt.title('Monte Carlo ile Pi Sayısı Tahmini')
+    plt.plot(running_mean, label="Running mean of U(0,1)")
+    plt.axhline(y=mu, linestyle="--", label="True mean (0.5)")
+    plt.xlabel("Number of samples (n)")
+    plt.ylabel("Running mean")
+    plt.title("SLLN Demonstration: Running Mean Converges to 0.5")
     plt.legend()
     plt.grid(True)
-    plt.savefig('../results/figures/pi_estimation.png')
+    plt.tight_layout()
+    plt.savefig("../results/figures/slln_running_mean.png", dpi=200)
     plt.show()
 
+    return running_mean
+
+
 if __name__ == "__main__":
-    estimate_pi()
+    simulate_slln()
+
+
