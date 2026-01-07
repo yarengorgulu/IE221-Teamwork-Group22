@@ -1,13 +1,10 @@
-"""
-This module demonstrates the Strong Law of Large Numbers (SLLN).
+""" This module demonstrates the Strong Law of Large Numbers (SLLN).
 
 We generate i.i.d. samples from Uniform(0,1) and compute the running (cumulative) mean.
-By the SLLN, the running mean converges almost surely to the true mean mu = 0.5.
-"""
+By the SLLN, the running mean converges almost surely to the true mean mu = 0.5. """
 
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 def simulate_slln(n=10000):
     """
@@ -38,8 +35,6 @@ def simulate_slln(n=10000):
 
     return running_mean
 
-
 if __name__ == "__main__":
     simulate_slln()
-
 
