@@ -10,7 +10,7 @@ and Monte Carlo estimation of π. All simulation outputs are saved under the res
 ---
 
 ## Team Members
-- Yaren Görgülü – Student ID: 2211021064  
+- Yaren Görgülü – Student ID: 2211021064
 - Fatmanur Demirci – Student ID: 2211021041
 - Beyzanur Çiftçi- Student ID: 2211021008
 - Buse Yakutsoy - Student ID:2311021070
