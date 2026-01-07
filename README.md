@@ -14,7 +14,7 @@ and Monte Carlo estimation of π. All simulation outputs are saved under the res
 - Fatmanur Demirci – Student ID: 2211021041
 - Beyzanur Çiftçi- Student ID: 2211021008
 - Buse Yakutsoy - Student ID:2311021070
-<!-- Add other team members here -->
+
 
 ---
 ## Installation
