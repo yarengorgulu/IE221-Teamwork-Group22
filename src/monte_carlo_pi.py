@@ -1,10 +1,8 @@
-"""
-This module estimates π using the Monte Carlo method.
+""" This module estimates π using the Monte Carlo method.
 
 It generates random points uniformly in the unit square [0,1]×[0,1] and uses the
 proportion of points inside the quarter circle (x² + y² ≤ 1) to form a running estimate of π.
-The convergence of the running estimate is saved as a figure.
-"""
+The convergence of the running estimate is saved as a figure. """
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,7 +19,6 @@ def estimate_pi(n=10000):
     """
     x = np.random.uniform(0, 1, n)
     y = np.random.uniform(0, 1, n)
-    
     
     # x^2 + y^2 <= 1 koşulu (çeyrek daire içi)
     inside_circle = (x**2 + y**2) <= 1
