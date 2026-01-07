@@ -1,10 +1,8 @@
-"""
-This module demonstrates the Central Limit Theorem (CLT) using i.i.d. Uniform(0,1) random variables.
+""" This module demonstrates the Central Limit Theorem (CLT) using i.i.d. Uniform(0,1) random variables.
 
 For several sample sizes n, it generates m independent experiments, computes the standardized sum
 Z = (S_n - n*mu) / (sigma*sqrt(n)), and compares the empirical distribution to N(0,1) using
-histograms and a Q-Q plot.
-"""
+histograms and a Q-Q plot. """
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -55,7 +53,6 @@ def simulate_clt(n_values=[2, 5, 10, 30, 50], m=1000, bins=30):
 
     return z_dict
 
-
 def plot_qq(z_values, n_label):
     """
     Creates and saves a normal Q-Q plot for given standardized sums.
@@ -77,13 +74,10 @@ def plot_qq(z_values, n_label):
     plt.savefig("../results/figures/clt_qqplot.png", dpi=200)
     plt.show()
 
-
 if __name__ == "__main__":
     z_dict = simulate_clt()
-    # Use the largest n for the Q-Q plot (best normal approximation)
+    # Use the largest n for the Q-Q plot (Best Normal Approximation)
     n_max = max(z_dict.keys())
     plot_qq(z_dict[n_max], n_max)
-
-
 
 
