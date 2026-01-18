@@ -20,8 +20,6 @@ alpha = 1.5
 x_m = 1
 
 mu = (alpha * x_m) / (alpha - 1)   # E[X] = 3
-# Variance does NOT exist for alpha <= 2
-# sigma is undefined (infinite variance)
 
 
 n = 10000
