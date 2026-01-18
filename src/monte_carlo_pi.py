@@ -20,13 +20,13 @@ def estimate_pi(n=10000):
     x = np.random.uniform(0, 1, n)
     y = np.random.uniform(0, 1, n)
     
-    # x^2 + y^2 <= 1 condition (inside the quarter circle)
+  
     inside_circle = (x**2 + y**2) <= 1
     
-    # Pi estimated: 4 * (insiders / total)
+   
     pi_estimates = 4 * np.cumsum(inside_circle) / np.arange(1, n + 1)
     
-    # Visualization
+  
     plt.figure(figsize=(10, 6))
     plt.plot(pi_estimates, label='Pi Tahmini')
     plt.axhline(y=np.pi, color='r', linestyle='--', label='Gerçek Pi Değeri')
