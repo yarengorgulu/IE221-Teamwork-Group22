@@ -15,16 +15,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-# --------------------------------------------------
-# THEORETICAL MOMENTS
-# --------------------------------------------------
-# No theoretical mean or variance exists for Cauchy distribution
+
 x0 = 0
 gamma = 1
 
-# --------------------------------------------------
-# SLLN ANALYSIS
-# --------------------------------------------------
+
 n = 10000
 samples = np.random.standard_cauchy(size=n)
 
@@ -39,9 +34,7 @@ plt.legend()
 plt.savefig("../results/cauchy/slln.png")
 plt.close()
 
-# --------------------------------------------------
-# CLT ANALYSIS
-# --------------------------------------------------
+
 n_values = [2, 5, 10, 30, 50, 100]
 m = 1000
 
@@ -54,7 +47,7 @@ for n in n_values:
 
     means = np.array(means)
 
-    # CLT standardization is NOT valid (mean and variance undefined)
+    
     Z = means
 
     # Histogram
@@ -73,9 +66,3 @@ for n in n_values:
     plt.savefig(f"../results/cauchy/clt_qq_n{n}.png")
     plt.close()
 
-# --------------------------------------------------
-# OBSERVATION
-# --------------------------------------------------
-# For the Cauchy distribution, neither SLLN nor CLT holds.
-# The sample mean does not converge, and the distribution of
-# sample means remains Cauchy regardless of sample size.
