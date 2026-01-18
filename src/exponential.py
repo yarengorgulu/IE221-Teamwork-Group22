@@ -11,15 +11,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-# --------------------------------------------------
-# THEORETICAL MOMENTS
-# --------------------------------------------------
+
 mu = 1.0        # E[X] for Exponential(1)
 sigma = 1.0     # Std dev for Exponential(1)
 
-# --------------------------------------------------
-# SLLN ANALYSIS
-# --------------------------------------------------
 n = 10000
 samples = np.random.exponential(scale=1, size=n)
 
@@ -35,9 +30,7 @@ plt.legend()
 plt.savefig("../results/exponential/slln.png")
 plt.close()
 
-# --------------------------------------------------
-# CLT ANALYSIS
-# --------------------------------------------------
+
 n_values = [2, 5, 10, 30, 50, 100]
 m = 1000
 
@@ -50,7 +43,7 @@ for n in n_values:
 
     means = np.array(means)
 
-    # Standardization (CLT valid: finite mean and variance)
+   
     Z = (means - mu) / (sigma / np.sqrt(n))
 
     # Histogram
@@ -69,9 +62,3 @@ for n in n_values:
     plt.savefig(f"../results/exponential/clt_qq_n{n}.png")
     plt.close()
 
-# --------------------------------------------------
-# OBSERVATION
-# --------------------------------------------------
-# For the Exponential(1) distribution, both SLLN and CLT hold.
-# However, compared to Uniform(0,1), convergence is slower due
-# to skewness and heavier right tail.
