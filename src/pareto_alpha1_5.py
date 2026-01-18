@@ -15,9 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-# --------------------------------------------------
-# THEORETICAL MOMENTS
-# --------------------------------------------------
+
 alpha = 1.5
 x_m = 1
 
@@ -25,9 +23,7 @@ mu = (alpha * x_m) / (alpha - 1)   # E[X] = 3
 # Variance does NOT exist for alpha <= 2
 # sigma is undefined (infinite variance)
 
-# --------------------------------------------------
-# SLLN ANALYSIS
-# --------------------------------------------------
+
 n = 10000
 samples = np.random.pareto(alpha, size=n) + x_m
 
@@ -43,9 +39,7 @@ plt.legend()
 plt.savefig("../results/pareto_alpha1_5/slln.png")
 plt.close()
 
-# --------------------------------------------------
-# CLT ANALYSIS
-# --------------------------------------------------
+
 n_values = [2, 5, 10, 30, 50, 100]
 m = 1000
 
@@ -58,7 +52,7 @@ for n in n_values:
 
     means = np.array(means)
 
-    # CLT standardization is NOT valid due to infinite variance
+   
     Z = means   # intentionally not standardized
 
     # Histogram
@@ -77,10 +71,4 @@ for n in n_values:
     plt.savefig(f"../results/pareto_alpha1_5/clt_qq_n{n}.png")
     plt.close()
 
-# --------------------------------------------------
-# OBSERVATION
-# --------------------------------------------------
-# For Pareto(alpha=1.5), the mean exists but the variance is infinite.
-# As a result:
-# - SLLN shows unstable and slow convergence
-# - CLT fails completely due to violation of finite variance assumption
+
