@@ -46,7 +46,7 @@ IE221-Teamwork-Group22/
 │       ├── clt_histograms.png    # CLT histograms
 │       ├── clt_qqplot.png        # CLT Q-Q plot
 │       └── pi_estimation.png     # Monte Carlo π estimation
-│
+│       └── tw5_result.zip
 ├── reports/
 │   └── IE221_Teamwork_Group22_Report.pdf  # Final report
 │
