@@ -11,15 +11,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-# --------------------------------------------------
-# THEORETICAL MOMENTS
-# --------------------------------------------------
+
 mu = 0.5                 # E[X] for Uniform(0,1)
 sigma = np.sqrt(1/12)    # Std dev for Uniform(0,1)
 
-# --------------------------------------------------
-# SLLN ANALYSIS
-# --------------------------------------------------
+
 n = 10000
 samples = np.random.uniform(0, 1, size=n)
 
@@ -35,9 +31,7 @@ plt.legend()
 plt.savefig("../results/uniform/slln.png")
 plt.close()
 
-# --------------------------------------------------
-# CLT ANALYSIS
-# --------------------------------------------------
+
 n_values = [2, 5, 10, 30, 50, 100]
 m = 1000
 
@@ -69,9 +63,4 @@ for n in n_values:
     plt.savefig(f"../results/uniform/clt_qq_n{n}.png")
     plt.close()
 
-# --------------------------------------------------
-# OBSERVATION
-# --------------------------------------------------
-# For the Uniform(0,1) distribution, both SLLN and CLT work as expected.
-# The cumulative mean converges quickly to E[X], and standardized sums
-# approach normality as n increases.
+
